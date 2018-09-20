@@ -22,5 +22,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision "ansible" do |ansible|
     ansible.sudo = true
     ansible.playbook = "ansible/playbook.yml"
+    ansible.raw_arguments = ["-e", "ansible_python_interpreter=/usr/bin/python3"]
   end
 end
